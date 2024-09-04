@@ -15,7 +15,7 @@ export default function Create() {
         <div className="container lg:mx-auto px-5">Challenge Details</div>
       </div>
       <div className="container mx-auto">
-        <form className="lg:mx-0 px-5" action={createChallenge}>
+        <form className="lg:px-0 px-5" action={createChallenge}>
           <div className="pt-9">
             <label className="block">Challenge Name</label>
             <Input className="w-full mt-5 lg:w-1/3" name="challenge" />

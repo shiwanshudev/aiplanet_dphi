@@ -8,7 +8,7 @@ export default function DisplayFilters() {
     throw new Error("Search must be used with SearchContextProvider!");
   const { searchFilters, removeFilter } = context;
   return (
-    <div className="flex lg:pl-52 pt-10 lg:justify-normal justify-start flex-wrap">
+    <div className="flex lg:pl-52 pt-10 lg:justify-normal justify-start flex-wrap lg:h-10">
       {searchFilters.map((f) => (
         <button
           key={f}

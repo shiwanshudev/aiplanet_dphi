@@ -28,7 +28,7 @@ const config: Config = {
         "brand-blue-100": "#002A3B",
         "brand-lightyellow": "#F2C94C40",
         "brand-yellow": "#FFCE5C",
-        "brand-lightred": "#FF3C002B",
+        "brand-red": "#FF3C00",
       },
       keyframes: {
         overlay: {

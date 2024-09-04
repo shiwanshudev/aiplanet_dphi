@@ -18,7 +18,7 @@ export default function Search() {
 
   if (!context)
     throw new Error("Search must be used with SearchContextProvider");
-  const { handleFilter } = context;
+  const { handleFilter, setSearchText, searchText } = context;
 
   const closeOpenMenu = (e: MouseEvent) => {
     if (isOpen && !menu.current?.contains(e.target as Node)) {
@@ -40,6 +40,8 @@ export default function Search() {
           className="w-full p-2 outline-none"
           type="text"
           placeholder="Search"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
         />
       </div>
       {/* FILTER */}

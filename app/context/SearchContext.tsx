@@ -1,10 +1,12 @@
 "use client";
-import React, { createContext, Provider, useState } from "react";
+import React, { createContext, useState } from "react";
 
 interface SearchContextType {
   searchFilters: string[];
   handleFilter: (e: React.ChangeEvent<HTMLInputElement>) => void;
   removeFilter: (f: string) => void;
+  searchText: string;
+  setSearchText: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const SearchContext = createContext<SearchContextType | null>(null);
@@ -15,6 +17,7 @@ export default function SearchContextProvider({
   children: React.ReactNode;
 }) {
   const [searchFilters, setSearchFilters] = useState<string[]>([]);
+  const [searchText, setSearchText] = useState("");
 
   const handleFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (searchFilters.includes(e.target.value) && e.target.checked === false) {
@@ -40,7 +43,13 @@ export default function SearchContextProvider({
 
   return (
     <SearchContext.Provider
-      value={{ handleFilter, searchFilters, removeFilter }}
+      value={{
+        handleFilter,
+        searchFilters,
+        removeFilter,
+        searchText,
+        setSearchText,
+      }}
     >
       {children}
     </SearchContext.Provider>

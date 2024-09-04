@@ -4,27 +4,24 @@ import { Select, MenuItem } from "@mui/material";
 import { level } from "../utils/constants";
 import { SelectProps } from "@mui/material";
 
-export default function SelectLevel({ className, ...rest }: SelectProps) {
+export default function SelectLevel({ name, className, ...rest }: SelectProps) {
   const { EASY, DIFFICULT, HARD } = level;
-  const [difficulty, setDifficulty] = useState(EASY);
 
   return (
     <>
       <Select
         labelId="level"
         id="level"
-        value={difficulty}
         label="level"
-        name="level"
-        onChange={(event) => setDifficulty(event.target.value as string)}
+        name={name}
         className={className}
         size="small"
         {...rest}
-        defaultValue={EASY}
         sx={{
           "& legend": { display: "none" },
           "& fieldset": { top: 0 },
         }}
+        required
       >
         <MenuItem value={EASY} defaultChecked>
           Easy

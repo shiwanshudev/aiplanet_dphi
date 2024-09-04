@@ -2,22 +2,24 @@
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateTimePicker } from "@mui/x-date-pickers";
-import { useState } from "react";
 import type { Dayjs } from "dayjs";
 import Image from "next/image";
 import type { DateTimePickerProps as MuiDateTimePickerProps } from "@mui/x-date-pickers";
+import dayjs from "dayjs";
 
 interface DatePickerProps extends MuiDateTimePickerProps<Dayjs> {
   label: string;
   className: string;
+  previousValue?: Date;
 }
 
 export default function DatePicker({
   label,
   className,
+  name,
+  previousValue,
   ...rest
 }: DatePickerProps) {
-  const [selectedDate, setSelectedDate] = useState<null | Dayjs>(null);
   const DateImg = () => (
     <Image
       src={"/uil_calender.svg"}
@@ -30,14 +32,14 @@ export default function DatePicker({
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DateTimePicker
+        defaultValue={previousValue && dayjs(previousValue)}
         label={label}
-        value={selectedDate}
-        onChange={(d) => setSelectedDate(d)}
-        slotProps={{ textField: { size: "small" } }}
+        slotProps={{ textField: { size: "small", required: true } }}
         slots={{
           openPickerIcon: DateImg,
         }}
         className={className}
+        name={name}
         {...rest}
       />
     </LocalizationProvider>

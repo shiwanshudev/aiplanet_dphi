@@ -5,7 +5,7 @@ import { level } from "../utils/constants";
 import { SelectProps } from "@mui/material";
 
 export default function SelectLevel({ name, className, ...rest }: SelectProps) {
-  const { EASY, DIFFICULT, HARD } = level;
+  const { EASY, MEDIUM, HARD } = level;
 
   return (
     <>
@@ -26,7 +26,7 @@ export default function SelectLevel({ name, className, ...rest }: SelectProps) {
         <MenuItem value={EASY} defaultChecked>
           Easy
         </MenuItem>
-        <MenuItem value={DIFFICULT}>Medium</MenuItem>
+        <MenuItem value={MEDIUM}>Medium</MenuItem>
         <MenuItem value={HARD}>Hard</MenuItem>
       </Select>
     </>

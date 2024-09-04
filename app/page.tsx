@@ -1,5 +1,7 @@
+import Search from "@/components/search";
 import Image from "next/image";
 import Link from "next/link";
+import DisplayFilters from "@/components/display-filters";
 
 export default function Home() {
   return (
@@ -114,6 +116,15 @@ export default function Home() {
               rewards.
             </p>
           </div>
+        </div>
+      </section>
+      <section className="bg-brand-blue-100">
+        <div className="container mx-auto pb-24">
+          <h2 className="text-center text-white text-3xl pt-20 pb-16">
+            Explore Challenges
+          </h2>
+          <Search />
+          <DisplayFilters />
         </div>
       </section>
     </main>

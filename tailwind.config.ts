@@ -20,6 +20,7 @@ const config: Config = {
         "brand-gray-100": "#D9D9D9",
         "brand-gray-200": "#666666",
         "brand-slategray": "#F8F9FD7D",
+        "brand-slategray-100": "#64607D",
         "brand-green": "#44924C",
         "brand-blue": "#003145",
         "brand-blue-100": "#002A3B",

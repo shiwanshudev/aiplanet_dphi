@@ -52,6 +52,70 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="container mx-auto pb-32">
+        <h2 className="font-semibold text-3xl pt-24 pb-20 text-center">
+          Why Participate in{" "}
+          <span className="text-brand-green">AI Challenges?</span>
+        </h2>
+        <div className="flex items-center justify-center flex-wrap gap-5 lg:gap-10 lg:flex-row flex-col">
+          <div className="bg-brand-lightgray p-10 rounded-lg max-w-xl">
+            <Image
+              src={"/skills.svg"}
+              alt="participate image"
+              width={40}
+              height={40}
+            />
+            <h3 className="text-2xl font-semibold py-2">Prove your skills</h3>
+            <p className="text-brand-slategray-100 text-base">
+              Gain substantial experience by solving real-world problems and pit
+              against others to come up with innovative solutions.
+            </p>
+          </div>
+          <div className="bg-brand-lightgray p-10 rounded-lg max-w-xl">
+            <Image
+              src={"/community.svg"}
+              alt="participate image"
+              width={40}
+              height={40}
+            />
+            <h3 className="text-2xl font-semibold py-2">
+              Learn from community
+            </h3>
+            <p className="text-brand-slategray-100 text-base">
+              One can look and analyze the solutions submitted by the other Data
+              Scientists in the community and learn from them.
+            </p>
+          </div>
+          <div className="bg-brand-lightgray p-10 rounded-lg max-w-xl">
+            <Image
+              src={"/challenge.svg"}
+              alt="participate image"
+              width={40}
+              height={40}
+            />
+            <h3 className="text-2xl font-semibold py-2">Challenge yourself</h3>
+            <p className="text-brand-slategray-100 text-base">
+              There is nothing for you to lose by participating in a challenge.
+              You can fail safe, learn out of the entire experience and bounce
+              back harder.
+            </p>
+          </div>
+          <div className="bg-brand-lightgray p-10 rounded-lg max-w-xl">
+            <Image
+              src={"/recognition.svg"}
+              alt="participate image"
+              width={40}
+              height={40}
+            />
+            <h3 className="text-2xl font-semibold py-2">Earn recognition</h3>
+            <p className="text-brand-slategray-100 text-base">
+              You will stand out from the crowd if you do well in AI challenges,
+              it not only helps you shine in the community but also earns
+              rewards.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

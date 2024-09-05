@@ -2,12 +2,17 @@ import DatePicker from "@/components/date-picker";
 import SelectLevel from "@/components/select-level";
 import Input from "@/components/text-input";
 import Image from "next/image";
+import { Metadata } from "next";
 
 interface EditPageType {
   params: {
     slug: string;
   };
 }
+export const metadata: Metadata = {
+  title: "Dphi Admin | Edit Challenge",
+  description: "Accelerate Innovation with Global AI Challenges",
+};
 
 export default function Edit({ params }: EditPageType) {
   const fetchData = () => {

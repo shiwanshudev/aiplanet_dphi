@@ -3,7 +3,7 @@ import Image from "next/image";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import { useState, useRef, useEffect, useContext } from "react";
+import { useState, useRef, useEffect, useContext, useCallback } from "react";
 import { level, status } from "@/utils/constants";
 import { SearchContext } from "@/app/context/SearchContext";
 
@@ -25,11 +25,18 @@ export default function Search() {
       setIsOpen(false);
     }
   };
-
+  const stableCloseOpenMenu = useCallback(
+    (e: MouseEvent) => {
+      if (isOpen && !menu.current?.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    },
+    [isOpen]
+  );
   useEffect(() => {
-    document.addEventListener("mousedown", closeOpenMenu);
-    return () => document.removeEventListener("mousedown", closeOpenMenu);
-  }, [menu, closeOpenMenu]);
+    document.addEventListener("mousedown", stableCloseOpenMenu);
+    return () => document.removeEventListener("mousedown", stableCloseOpenMenu);
+  }, [menu, stableCloseOpenMenu]);
 
   return (
     // Search
